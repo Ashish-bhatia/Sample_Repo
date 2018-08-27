@@ -8,6 +8,7 @@ node() {
         checkout scm
       }
     stage ("Setup >>>") {
+        sh 'pwd;ls;'
 
     }
 }
