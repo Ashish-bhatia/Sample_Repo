@@ -9,6 +9,7 @@ node() {
       }
     stage ("Setup >>>") {
         sh 'pwd;ls;'
+        sh 'echo $REPONAME $USERS $ADMINID'
 
     }
 }
