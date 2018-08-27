@@ -5,11 +5,11 @@ def jsonParse(def json) {
 }
 node() {
     stage ("Starting >>>") {
+        echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
       }
     stage ("Setup >>>") {
         sh 'pwd;ls;'
         sh 'echo $REPONAME $USERS $ADMINID'
-
     }
 }
