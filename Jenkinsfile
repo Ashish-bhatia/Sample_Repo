@@ -3,7 +3,7 @@ import groovy.json.JsonSlurperClassic
 def jsonParse(def json) {
     new groovy.json.JsonSlurperClassic().parseText(json)
 }
-node('cloud&&centos') {
+node() {
     environment {
         CREDENTIALS = ''
         DEPLOY_ENV = ''
