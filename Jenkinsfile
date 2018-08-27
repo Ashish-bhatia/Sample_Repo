@@ -5,6 +5,7 @@ def jsonParse(def json) {
 }
 node() {
     stage ("Starting >>>") {
+        sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
       }
