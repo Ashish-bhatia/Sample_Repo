@@ -15,7 +15,7 @@ node() {
     }
     stage ("getzip"){
         dir('op'){
-            sh 'pwd'
+            sh 'pwd;ls'
         }
     }
 }
