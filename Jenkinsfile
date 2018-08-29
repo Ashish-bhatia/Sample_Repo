@@ -23,7 +23,10 @@ node() {
         }
     }
     stage ("Docker Setup"){
-        sh 'docker build -t img . '
+        /*sh 'docker build -t img . '*/
+        def pwd = pwd()
+        def host_mount_path = pwd+/op/
+        println host_mount_path
         sh 'docker images'
     }
 }
