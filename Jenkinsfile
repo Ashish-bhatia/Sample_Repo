@@ -18,8 +18,8 @@ node() {
             sh 'pwd;ls;'
             def file_name = "this is file name"
             println file_name
-            sh ' = echo ls | grep *.zip ;'
-            sh 'echo $FILE_NAME;'
+            sh 'echo ls | grep *.zip;'
+            sh 'echo $file_name;'
         }
     }
 }
