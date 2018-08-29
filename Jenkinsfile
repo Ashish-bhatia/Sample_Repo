@@ -17,9 +17,9 @@ node() {
         dir('op'){
             sh 'pwd;ls;'
             def file_name = "this is file name"
+            def  FILES_LIST = sh (script: "ls | grep *.zip", returnStdout: true).trim()
             println file_name
-            sh 'echo ls | grep *.zip;'
-            sh 'echo $file_name;'
+            println FILES_LIST
         }
     }
 }
