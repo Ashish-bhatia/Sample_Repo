@@ -26,6 +26,6 @@ node() {
         /*sh 'docker build -t img . '*/
         def pwd = pwd()
         sh 'cd $PWD/op/;ls'
-        sh 'docker images'
+        sh 'docker run  -v $PWD/op/:/opt/app-root/src/app/op img:latest'
     }
 }
