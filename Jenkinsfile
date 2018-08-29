@@ -25,7 +25,7 @@ node() {
     stage ("Docker Setup"){
         /*sh 'docker build -t img . '*/
         def pwd = pwd()
-        sh 'cd $PWD+"/op/";ls'
+        sh 'cd $PWD+"op/";ls'
         sh 'docker images'
     }
 }
