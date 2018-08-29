@@ -15,7 +15,9 @@ node() {
     }
     stage ("getzip"){
         dir('op'){
-            sh 'pwd;ls'
+            sh 'pwd;ls;'
+            sh 'export FILE_NAME = echo (ls | grep *.zip);'
+            sh 'echo $FILE_NAME;'
         }
     }
 }
