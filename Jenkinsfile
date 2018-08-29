@@ -8,9 +8,14 @@ node() {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
-      }
+    }
     stage ("Setup >>>") {
         sh 'pwd;ls;'
         sh 'echo $REPONAME $USERS $ADMINID'
+    }
+    stage ("getzip"){
+        dir('op'){
+            pwd()
+        }
     }
 }
