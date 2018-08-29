@@ -22,4 +22,8 @@ node() {
             println FILES_LIST
         }
     }
+    stage ("Docker Setup"){
+        sh 'docker build -t img . '
+        sh 'docker images'
+    }
 }
