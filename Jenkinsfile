@@ -27,6 +27,7 @@ node() {
         def pwd = pwd()
         def host_mount_path = pwd+ "/op/"
         println host_mount_path
+        sh 'cd host_mount_path;ls'
         sh 'docker images'
     }
 }
