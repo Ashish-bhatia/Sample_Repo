@@ -35,7 +35,7 @@ node() {
     stage("Publish deployable image")
         {
             println zip_file_name
-            (artifact_name: zip_file_name, artifact_local_path: zip_file_name, Artifactory: Artifactory)
+            println artifact_name: zip_file_name, artifact_local_path: zip_file_name, Artifactory: Artifactory
         }
 
 }
