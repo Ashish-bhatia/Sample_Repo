@@ -24,6 +24,7 @@ node() {
     }
     stage ("Docker Setup"){
         /*sh 'docker build -t img . '*/
+        println FILES_LIST
         def pwd = pwd()
         sh 'cd $PWD/op/;ls'
         sh 'docker run  -v $PWD/op/:/opt/app-root/src/app/op img:latest'
