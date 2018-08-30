@@ -18,7 +18,7 @@ node() {
         dir('op'){
             sh 'pwd;ls;'
             def file_name = "this is file name"
-            def  FILES_LIST = sh (script: "ls | grep *.zip", returnStdout: true).trim()
+            FILES_LIST = sh (script: "ls | grep *.zip", returnStdout: true).trim()
             println file_name
             println FILES_LIST
         }
@@ -26,6 +26,7 @@ node() {
     stage ("Docker Setup"){
         /*sh 'docker build -t img . '*/
         println FILES_LIST
+        println file_name
         def pwd = pwd()
         sh 'cd $PWD/op/;ls'
         sh 'docker run  -v $PWD/op/:/opt/app-root/src/app/op img:latest'
