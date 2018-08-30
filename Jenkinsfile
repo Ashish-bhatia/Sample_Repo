@@ -34,8 +34,8 @@ node() {
     }
     stage("Publish deployable image")
         {
-            println zip_file_name
-            println artifact_name: zip_file_name, artifact_local_path: zip_file_name, Artifactory: Artifactory
+            println FILES_LIST
+            println artifact_name: FILES_LIST, artifact_local_path: FILES_LIST, Artifactory: Artifactory
         }
 
 }
