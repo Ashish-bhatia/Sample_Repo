@@ -6,6 +6,7 @@ def jsonParse(def json) {
 node() {
     String  FILES_LIST
     def file_name = ""
+    def pwd = pwd()
     stage ("Starting >>>") {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
@@ -35,7 +36,7 @@ node() {
     stage("Publish deployable image")
         {
             println FILES_LIST
-            println artifact_name: FILES_LIST, artifact_local_path: FILES_LIST, Artifactory: Artifactory
+            println artifact_name: FILES_LIST, artifact_local_path: pwd/FILES_LIST/,
         }
 
 }
