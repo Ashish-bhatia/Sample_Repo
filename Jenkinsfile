@@ -32,4 +32,10 @@ node() {
         sh 'cd $PWD/op/;ls'
         sh 'docker run  -v $PWD/op/:/opt/app-root/src/app/op img:latest'
     }
+    stage("Publish deployable image")
+        {
+            println zip_file_name
+            (artifact_name: zip_file_name, artifact_local_path: zip_file_name, Artifactory: Artifactory)
+        }
+
 }
