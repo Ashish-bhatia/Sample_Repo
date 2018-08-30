@@ -36,7 +36,7 @@ node() {
     stage("Publish deployable image")
         {
             println FILES_LIST
-            println artifact_name: FILES_LIST, artifact_local_path: pwd+"/"+FILES_LIST,
+            println artifact_name: FILES_LIST, artifact_local_path: pwd+"/"+FILES_LIST
         }
 
 }
