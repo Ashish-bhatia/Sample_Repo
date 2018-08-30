@@ -5,6 +5,7 @@ def jsonParse(def json) {
 }
 node() {
     String  FILES_LIST
+    def file_name = ""
     stage ("Starting >>>") {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
