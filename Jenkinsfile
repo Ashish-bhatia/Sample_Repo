@@ -11,6 +11,8 @@ node() {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
+        def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
+        println scmUrl
     }
     stage ("Setup >>>") {
         sh 'pwd;ls;'
