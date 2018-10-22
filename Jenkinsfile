@@ -10,7 +10,7 @@ node() {
     def check_config = ""
     def pwd = pwd()
     stage ("Starting >>>") {
-        sh 'printenv'
+        //sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
         check_config = readFile file: 'command.json'
@@ -19,7 +19,7 @@ node() {
         println "variable direct."
         println run_config.Run_Config.Deploy_Lambda
         check_config = readFile file: 'service.yaml'
-        println check_config.find{'api_proxy'}
+        println check_config
         check_config.eachLine { String line ->
             println line
             }
