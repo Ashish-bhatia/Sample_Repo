@@ -16,12 +16,14 @@ node() {
         check_config = readFile file: 'command.json'
         run_config = jsonParse(check_config)
         println run_config 
+        println "variable direct."
         println run_config.Run_Config.Deploy_Lambda
+        println "test"
         println ${run_config.Run_Config.Deploy_Lambda}
         
-        if (${run_config.Run_Config.Deploy_Lambda} == true){
+        if (${run_config.Run_Config.Deploy_Lambda}){
         echo "Executing Deploy Lambda"
-        } else if (${run_config.Run_Config.Deploy_Lambda} == true) {
+        } else if (${run_config.Run_Config.Deploy_Lambda}) {
           echo "Executing RSDK "
         }
         def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
