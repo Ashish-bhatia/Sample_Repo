@@ -25,6 +25,8 @@ node() {
                 println line
             if(line.contains('api_proxy')){
                 println line
+                def ashish = line.split(':')
+                println ashish 
             }
             }
     
