@@ -19,7 +19,7 @@ node() {
         println "variable direct."
         println run_config.Run_Config.Deploy_Lambda
         check_config = readFile file: 'service.yaml'
-        println check_config
+    /*    println check_config
         def lines = check_config.readLines()
         lines.each { String line ->
                 println line
@@ -32,7 +32,11 @@ node() {
 
 
             }
-            }
+            } */
+        check_config.readlines().each {
+            String line ->
+                println line
+        }
     
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
