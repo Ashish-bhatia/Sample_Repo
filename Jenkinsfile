@@ -21,13 +21,11 @@ node() {
         check_config = readFile file: 'service.yaml'
         properties([
              parameters([
-         string(name: 'submodule', defaultValue: ''),
-            string(name: 'submodule_branch', defaultValue: ''),
-         string(name: 'commit_sha', defaultValue: ''),
+            string(name: 'submodule', defaultValue: 'ashish'),
+            string(name: 'submodule_branch', defaultValue: 'test'),
           ])
         ])
         println submodule
-        println "test--module"
     /*    println check_config
         def lines = check_config.readLines()
         lines.each { String line ->
