@@ -1,0 +1,4 @@
+{
+RUN_RSDK: True,
+RUN_LAMBDA : True,
+}
