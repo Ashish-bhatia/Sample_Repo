@@ -23,6 +23,9 @@ node() {
         def lines = check_config.readLines()
         lines.each { String line ->
                 println line
+            if(line.contains('api_proxy')){
+                println line
+            }
             }
     
         if (run_config.Run_Config.Deploy_Lambda){
