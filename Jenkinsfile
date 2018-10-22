@@ -15,7 +15,9 @@ node() {
         checkout scm
         check_config = readFile file: 'command.json'
         run_config = jsonParse(check_config)
-        println run_config
+        println run_config 
+        println run_config.Run_Config.Deploy_Lambda
+        println ${run_config.Run_Config.Deploy_Lambda}
         
         if (${run_config.Run_Config.Deploy_Lambda} == true){
         echo "Executing Deploy Lambda"
