@@ -6,15 +6,19 @@ def jsonParse(def json) {
 node() {
     String  FILES_LIST
     def file_name = ""
-    def run_para = ""
+    def run_config = ""
     def pwd = pwd()
     stage ("Starting >>>") {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
-        run_para = readFile file: 'command.json'
-        sh 'pwd;ls;echo XXXXXXXX'
-        println run_para
+        run_config = jsonParse(readFile file: 'command.json')
+        println run_config
+        if (run_config.Run_Config.Deploy_Lambda == true){
+        echo "Executing Deploy Lambda"
+        } else if (run_config.Run_Config.Deploy_Lambda == true) {
+          echo "Executing RSDK "
+        }
         def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
         println scmUrl
     }
