@@ -12,7 +12,6 @@ node() {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
-        
         run_para = readFile file: 'command.json'
         sh 'pwd;ls;echo XXXXXXXX'
         println run_para
