@@ -1,4 +1,6 @@
 {
-RUN_RSDK: True,
-RUN_LAMBDA : True,
+    "Run_Config" : {
+      "Deploy_Lambda": true,
+      "Generate_RSDK": true
+    }
 }
