@@ -27,7 +27,9 @@ node() {
                 println line
                 def ashish = line.split(':')
                 println ashish[0]
-                                println ashish[1] 
+                                println ashish[1]
+                                                println ashish[1].length()
+
 
             }
             }
