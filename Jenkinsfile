@@ -23,7 +23,9 @@ node() {
         check_config.eachLine { String line ->
             println line
             }
-        
+        new File("service.yaml").eachLine {  
+         line -> println "line : $line"; 
+        } 
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
         }
