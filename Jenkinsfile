@@ -21,6 +21,7 @@ node() {
         
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
+        }
         if (run_config.Run_Config.Generate_RSDK) {
           echo "Executing RSDK "
         }
