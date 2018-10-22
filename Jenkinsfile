@@ -20,6 +20,9 @@ node() {
         println run_config.Run_Config.Deploy_Lambda
         check_config = readFile file: 'service.yaml'
         println check_config.find{'api_proxy'}
+        check_config.eachLine { String line ->
+            println line
+            }
         
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
