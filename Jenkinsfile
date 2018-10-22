@@ -19,6 +19,15 @@ node() {
         println "variable direct."
         println run_config.Run_Config.Deploy_Lambda
         check_config = readFile file: 'service.yaml'
+        properties([
+             parameters([
+         string(name: 'submodule', defaultValue: ''),
+            string(name: 'submodule_branch', defaultValue: ''),
+         string(name: 'commit_sha', defaultValue: ''),
+          ])
+        ])
+        println submodule
+        println "test--module"
     /*    println check_config
         def lines = check_config.readLines()
         lines.each { String line ->
