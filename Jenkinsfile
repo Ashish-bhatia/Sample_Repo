@@ -6,11 +6,14 @@ def jsonParse(def json) {
 node() {
     String  FILES_LIST
     def file_name = ""
+    def run_para = ""
     def pwd = pwd()
     stage ("Starting >>>") {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
+        run_para = readFile file: 'command.json'
+        println run_para
         def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
         println scmUrl
     }
