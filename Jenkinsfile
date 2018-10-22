@@ -18,6 +18,8 @@ node() {
         println run_config 
         println "variable direct."
         println run_config.Run_Config.Deploy_Lambda
+        check_config = readFile file: 'service.yaml'
+        println check_config.find{'api_proxy'}
         
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
