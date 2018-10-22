@@ -7,16 +7,19 @@ node() {
     String  FILES_LIST
     def file_name = ""
     def run_config = ""
+    def check_config = ""
     def pwd = pwd()
     stage ("Starting >>>") {
         sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
         checkout scm
-        run_config = jsonParse(readFile file: 'command.json')
+        check_config = readFile file: 'command.json'
+        run_config = jsonParse(check_config)
         println run_config
-        if (run_config.Run_Config.Deploy_Lambda == true){
+        
+        if (${run_config.Run_Config.Deploy_Lambda} == true){
         echo "Executing Deploy Lambda"
-        } else if (run_config.Run_Config.Deploy_Lambda == true) {
+        } else if (${run_config.Run_Config.Deploy_Lambda} == true) {
           echo "Executing RSDK "
         }
         def scmUrl = scm.getUserRemoteConfigs()[0].getUrl()
