@@ -40,10 +40,7 @@ node() {
 
             }
             } */
-        check_config.readlines().each {
-            String line ->
-                println line
-        }
+
     
         if (run_config.Run_Config.Deploy_Lambda){
         echo "Executing Deploy Lambda"
@@ -55,6 +52,7 @@ node() {
         println scmUrl
     }
     stage ("Setup >>>") {
+        println submodule
         sh 'pwd;ls;'
         sh 'echo $REPONAME $USERS $ADMINID'
     }
