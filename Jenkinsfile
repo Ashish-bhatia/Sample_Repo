@@ -9,7 +9,6 @@ node() {
     def run_config = ""
     def check_config = ""
     def pwd = pwd()
-    def submodule = ""
     stage ("Starting >>>") {
         //sh 'printenv'
         echo 'Pulling...' + env.BRANCH_NAME
@@ -53,11 +52,11 @@ node() {
         println scmUrl
     }
     stage ("Setup >>>") {
+        println "Love400"
         println submodule
         sh 'pwd;ls;'
-        sh '$params.submodule'
-        sh 'echo $REPONAME $USERS $ADMINID'
-        echo "config variables " + parms.submodule +" Repo "
+        sh 'echo ${params.submodule} 
+        echo "config variables " + ${params.submodule} +" Repo "
     }
     stage ("getzip"){
         dir('op'){
