@@ -60,9 +60,10 @@ node() {
     stage ("getzip"){
         dir('op'){
             sh 'pwd;ls;'
-            file_name = "this is file name"
+          //  file_name = "this is file name"
             FILES_LIST = sh (script: "ls | grep *.zip", returnStdout: true).trim()
-            println file_name
+          //  println file_name
+            println "AB"
             println FILES_LIST
         }
     }
