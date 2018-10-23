@@ -56,7 +56,6 @@ node() {
         println submodule
         sh 'pwd;ls;'
         sh "echo sh submodule is ${params.submodule}"
-        echo "config variables " + ${params.submodule} +" Repo "
     }
     stage ("getzip"){
         dir('op'){
