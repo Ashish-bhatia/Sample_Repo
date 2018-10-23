@@ -55,6 +55,7 @@ node() {
         println submodule
         sh 'pwd;ls;'
         sh 'echo $REPONAME $USERS $ADMINID'
+        echo "config variables " + $submodule +" Repo "
     }
     stage ("getzip"){
         dir('op'){
