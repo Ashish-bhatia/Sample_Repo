@@ -65,10 +65,12 @@ node() {
           //  println file_name
             println "AB"
             println FILES_LIST
-           for(int i in FILES_LIST.split('\n')) { 
+           for(i in FILES_LIST.split('\n')) { 
+               if i.contains(a){
                 println("Ashish FIles")
                 println(i)
-                } 
+               }
+              } 
         }
     }
     stage ("Docker Setup"){
