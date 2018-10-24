@@ -65,7 +65,7 @@ node() {
           //  println file_name
             println "AB"
             println FILES_LIST
-           for(int i in FILES_LIST.split(' ')) { 
+           for(int i in FILES_LIST.split('\n')) { 
                 println("Ashish FIles")
                 println(i)
                 } 
