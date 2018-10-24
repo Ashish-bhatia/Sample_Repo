@@ -66,7 +66,7 @@ node() {
             println "AB"
             println FILES_LIST
            for(i in FILES_LIST.split('\n')) { 
-               if i.contains(a){
+               if (i.contains('a')){
                 println("Ashish FIles")
                 println(i)
                }
