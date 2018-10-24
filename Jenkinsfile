@@ -61,10 +61,11 @@ node() {
         dir('op'){
             sh 'pwd;ls;'
           //  file_name = "this is file name"
-            FILES_LIST = sh (script: "ls | grep *.zip", returnStdout: true).trim()
+            FILES_LIST = sh (script: "ls  *.zip", returnStdout: true).trim()
           //  println file_name
             println "AB"
             println FILES_LIST
+            
         }
     }
     stage ("Docker Setup"){
@@ -77,7 +78,7 @@ node() {
     stage("Publish deployable image")
         {
             println FILES_LIST
-            println artifact_name: FILES_LIST, artifact_local_path: pwd+"/"+FILES_LIST
+      //      println artifact_name: FILES_LIST, artifact_local_path: pwd+"/"+FILES_LIST
         }
 
 }
